@@ -37,6 +37,8 @@ class PessoaController
         $pessoa->telefone = $_POST['telefone'];
         $pessoa->endereco = $_POST['endereco'];
 
+        $pessoa->save();
+
         echo 'Registro inserido com sucesso!';
     }
 }
