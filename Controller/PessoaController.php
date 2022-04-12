@@ -15,6 +15,12 @@ class PessoaController
      */
     public static function index() 
     {
+        include 'Model/PessoaModel.php';
+
+        $model = new PessoaModel();
+        $model->getAllRows();
+
+        $nome = "Adib";
         include 'View/modules/Pessoa/ListaPessoas.php';
     }
 

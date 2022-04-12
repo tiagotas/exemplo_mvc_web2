@@ -9,6 +9,8 @@ class PessoaModel
     public $data_nascimento, $email;
     public $telefone, $endereco;
 
+    public $rows;
+
 
     /**
      * Declaração do método save que chamará a DAO para gravar no banco de dados
@@ -29,5 +31,14 @@ class PessoaModel
         } else {
             // update
         }
+    }
+
+    public function getAllRows()
+    {
+        include 'DAO/PessoaDAO.php';
+
+        $dao = new PessoaDAO();
+
+        $this->rows = $dao->select();
     }
 }

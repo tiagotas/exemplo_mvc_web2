@@ -65,4 +65,15 @@ class PessoaDAO
         // Ao fim, onde todo SQL está montando, executamos a consulta.
         $stmt->execute();      
     }
+
+
+    public function select()
+    {
+        $sql = "SELECT * FROM pessoa ";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
 }
